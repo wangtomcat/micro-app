@@ -6,10 +6,10 @@
 
 ### 目录
 ```text
--Host (微前端框架)
--RemoteHome (微前端应用)
--RemoteDetail (微前端应用)
--RemoteModules (微前端模块)
+- host (微前端框架)
+- remote-home (微前端应用)
+- remote-detail (微前端应用)
+- remote-modules (微前端模块)
 ```
 
 ### 目标
