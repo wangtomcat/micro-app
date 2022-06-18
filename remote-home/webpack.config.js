@@ -96,9 +96,10 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "RemoteHome",
       filename: "remoteEntry.js",
-      remotes: {
+      remotes: {},
+      exposes: {
+        'Home': './src/router'
       },
-      exposes: {},
       shared: {
         react: {
           eager: true,

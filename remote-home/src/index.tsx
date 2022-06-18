@@ -1,14 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-
-const App = () => {
-  return <div>RemoteHome App</div>
-}
+import Home from './router'
 
 const dom = document.getElementById('root')
 
 if (dom) {
   const root = ReactDOM.createRoot(dom)
-  root.render(<App />)
+  root.render(<Home />)
 }
 

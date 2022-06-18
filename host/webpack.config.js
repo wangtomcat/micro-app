@@ -98,10 +98,10 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({ template: "./index.html" }),
     new ModuleFederationPlugin({
-      name: "Home",
+      name: "Host",
       filename: "remoteEntry.js",
       remotes: {
-        'RemoteHome': 'RemoteHome@http://localhost:3002/remoteEntry.js'
+        RemoteHome: 'RemoteHome@http://localhost:3002/remoteEntry.js'
       },
       exposes: {},
       shared: {
