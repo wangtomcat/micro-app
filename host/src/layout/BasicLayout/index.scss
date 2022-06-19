@@ -1,0 +1,28 @@
+.basic_layout_wrap {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  .basic_header_wrap {
+    width: 100%;
+    height: 72px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .basic_content_wrap {
+    width: 100%;
+    height: calc(100% - 72px);
+    display: flex;
+  }
+  .content_left_wrap {
+    height: 100%;
+    width: 110px;
+    overflow-y: auto;
+    border-right: 1px solid #f0f0f0;
+  }
+  .content_main_wrap {
+    width: calc(100% - 110px);
+    height: 100%;
+    display: flex;
+    overflow-y: auto;
+  }
+}

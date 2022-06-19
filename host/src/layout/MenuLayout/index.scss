@@ -1,0 +1,16 @@
+.menu_layout_wrap {
+  display: flex;
+  flex-direction: column;
+  .meunItems {
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    &.active {
+      color: #ff6600;
+      background-color: #f0f0f0;
+    }
+  }
+}
