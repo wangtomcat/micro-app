@@ -27,6 +27,7 @@ interface IProps {
   columns?: string | number;
   responsive?: boolean;
   layout?: FormLayout; // 布局
+  [key: string]: any
 }
 
 type IType = "input" | "number" | "password" | "textarea"
