@@ -7,10 +7,11 @@ interface IProps {
   url: string, // 微应用地址
   scope: string; // 微应用名称
   module: string; // 微应用抛出的模块
+  moduleProps?: object; // 透传下去的props
 }
 
 export default function System(props: IProps) {
-  const { url, scope, module } = props
+  const { url, scope, module, moduleProps = {} } = props
   const { ready, failed } = useDynamicScript({
     url: url,
   });
@@ -34,7 +35,7 @@ export default function System(props: IProps) {
 
   return (
     <React.Suspense fallback="Loading System">
-      <Component />
+      <Component {...moduleProps} />
     </React.Suspense>
   );
 }

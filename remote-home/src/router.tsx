@@ -1,6 +1,7 @@
 import React from "react";
 
-const Index = () => {
+const Index = (props) => {
+  console.log(props,"435re")
   return <div>remote-home</div>
 }
 
