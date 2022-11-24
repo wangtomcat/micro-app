@@ -3,6 +3,7 @@ import LoadComponent from "@/components/LoadComponents";
 import { Button } from 'antd'
 import Form from '@/components/Form'
 import Validator from '@/components/Form/validator'
+import CutImg from '@/components/CutImg'
 
 const component = {
   url: "http://localhost:3002/remoteEntry.js",
@@ -13,6 +14,7 @@ const component = {
 
 const Index = (props) => {
   const formRef: React.RefObject<Form> = useRef(null)
+  const cutImgRef: React.RefObject<{ show: Function, hide: Function }> = useRef(null)
   const layout = [7, 16]
   const model = [
     {
@@ -118,6 +120,16 @@ const Index = (props) => {
     },
   ]
 
+  const onSelectFile = e => {
+    if (e.target.files && e.target.files.length > 0) {
+      const reader = new FileReader();
+      reader.readAsDataURL(e.target.files[0]);
+      reader.onload = () => {
+        cutImgRef?.current?.show(reader?.result);
+      };
+    }
+  };
+
   return <div>
     <div>
       <Form model={model} ref={formRef} />
@@ -127,6 +139,8 @@ const Index = (props) => {
       }}>click</Button>
     </div>
     <LoadComponent {...component} />
+    <input type='file' accept="image/*" onChange={onSelectFile} />
+    <CutImg locked ref={cutImgRef} handleCut={(v) => { console.log(v, "45r") }} current={null} />
   </div>
 }
 
