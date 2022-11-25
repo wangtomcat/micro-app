@@ -140,7 +140,7 @@ const Index = (props) => {
     </div>
     <LoadComponent {...component} />
     <input type='file' accept="image/*" onChange={onSelectFile} />
-    <CutImg locked ref={cutImgRef} handleCut={(v) => { console.log(v, "45r") }} current={null} />
+    <CutImg locked ref={cutImgRef} handleCut={(v) => { console.log(v, "45r") }} />
   </div>
 }
 

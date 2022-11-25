@@ -26,7 +26,7 @@ enum enumWidthAndHeight {
   'height' = '高度',
 }
 
-const Index: ForwardRefRenderFunction<ReactNode, IProps> = (props, ref) => {
+const Index: ForwardRefRenderFunction<unknown, IProps> = (props, ref) => {
   const { handleCut, locked = false } = props;
   let imageRef: any = useRef(null);
   let fileUrl: any = useRef(null);
@@ -134,7 +134,7 @@ const Index: ForwardRefRenderFunction<ReactNode, IProps> = (props, ref) => {
             controls={false}
           />
           <InputNumber
-            addonAfter="height："
+            addonBefore="height："
             onChange={v => handleSetCrop('height', v)}
             style={{ width: '160px' }}
             value={crop?.height}
@@ -155,6 +155,6 @@ const Index: ForwardRefRenderFunction<ReactNode, IProps> = (props, ref) => {
   );
 };
 
-const ForwardIndex: ForwardRefExoticComponent<IProps & RefObject<{ show: Function, hide: Function }>> = forwardRef(Index);
+const ForwardIndex = forwardRef(Index);
 
 export default ForwardIndex;
